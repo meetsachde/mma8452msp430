@@ -1,22 +1,27 @@
 //TODO: Write your info
 
 #include <msp430.h>
-//TODO: Add your header files here
+#include "i2c.h"
+#include "MMA8452.h"
 
 //global variables 
-//YOUR_TYPE_VAR X_value;
-//YOUR_TYPE_VAR Y_value;
-//YOUR_TYPE_VAR Z_value;
+int X_value,Y_value,Z_value;
 
 
 void main(void)
 {
-	init();
-	
+	P2SEL=0;
+	P2SELH=0;
+	P2DIR=0xFF;
+	i2c_init();
+	i2c_WriteOneByte(0x00,0x0E);
+	Standby();
 	for (;;)
 	{
-		X_value = Read_X_Value();
-		Y_value = Read_Y_Value();
-		Z_value = Read_Z_Value();
+		Active();
+		Read_X_Value();
+		Read_Y_Value();
+		Read_Z_Value();
+		_delay_cycles(500000);
 	}
 }
