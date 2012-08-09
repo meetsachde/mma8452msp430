@@ -1,6 +1,6 @@
 //TODO: Write your info
 
-#include <msp430.h>
+#include <msp430g2553.h>
 #include "i2c.h"
 #include "MMA8452.h"
 
@@ -15,10 +15,10 @@ void main(void)
 	P2DIR=0xFF;
 	i2c_init();
 	i2c_WriteOneByte(0x00,0x0E);
-	Standby();
+	standby();
 	for (;;)
 	{
-		Active();
+		active();
 		Read_X_Value();
 		Read_Y_Value();
 		Read_Z_Value();

@@ -1,14 +1,24 @@
+/*
+ * MMA8452.c
+ *
+ *  Created on: 9 Aug 2012
+ *      Author: WIN7
+ */
+
+#include "MMA8452.h"
 /* Sets the MMA8452 to standby mode.
    It must be in standby to change most register settings */
 void standby(){
-  byte c = i2c_ReadOneByte(0x2A);
+  char c;
+  c = i2c_ReadOneByte(0x2A);
   i2c_WriteOneByte(c & ~(0x01),0x2A);
 }
 
 /* Sets the MMA8452 to active mode.
    Needs to be in this mode to output data */
 void active(){
-  byte c = i2c_ReadOneByte(0x2A);
+  char c;
+  c = i2c_ReadOneByte(0x2A);
   i2c_WriteOneByte(c | 0x01,0x2A );
 }
 
@@ -26,3 +36,4 @@ void Read_Y_value(){
 void Read_Z_value(){
 	Z_value=i2c_ReadOneByte(0x05)*2/128;			//8 higher bit of Z_value(12 bit) store in 0x05
 }
+
