@@ -5,8 +5,8 @@
  *      Author: WIN7
  */
 
-
-#include "i2c.h"
+#include <msp430g2553.h>
+#include "../header/i2c.h"
 
 #define SDA     BIT7 //P1.7
 #define SCL     BIT6 //P1.6

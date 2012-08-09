@@ -7,8 +7,8 @@
 
 
 #include<msp430g2553.h>
-#include "i2c.h"
-#include "MMA8452.h"
+#include "../header/i2c.h"
+#include "../header/MMA8452.h"
 
 void main(){
 	i2c_init();

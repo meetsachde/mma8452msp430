@@ -1,0 +1,1 @@
+"./src/source/main_msp430_MMA8452.obj" "./src/source/i2c.obj" "./src/source/MMA8452.obj" -l"libc.a" "../lnk_msp430g2553.cmd" 
