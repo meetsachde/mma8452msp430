@@ -1,0 +1,1 @@
+"./src/source/uart.obj" "./src/source/mma8452.obj" "./src/source/main.obj" "./src/source/i2c.obj" -l"libc.a" "../lnk_msp430g2553.cmd" 
